@@ -73,7 +73,7 @@ function Navbar() {
                     </SearchContainer>
 
                 </Left>
-                <Center><Logo>IVA'S SHOP</Logo></Center>
+                <Center><Logo>IVA.</Logo></Center>
                 <Right>
                     <MenuItem>REGISTER</MenuItem>
                     <MenuItem>SIGN IN</MenuItem>
