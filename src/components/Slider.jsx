@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import styled from "styled-components";
 import {ArrowLeftOutlined, ArrowRightOutlined} from "@mui/icons-material";
 import {sliderItems} from "../data";
+import {mobile} from "../responsive";
 
 const Container = styled.div`
   width: 100%;
@@ -9,6 +10,7 @@ const Container = styled.div`
   display: flex;
   position: relative;
   overflow: hidden;
+  ${mobile({display:"none"})}
 `
 
 const Arrow = styled.div`
@@ -34,7 +36,7 @@ const Wrapper = styled.div`
   height: 100%;
   display: flex;
   transition: all 1.5s ease;
-  transform: translateX(${props => props.slideIndex * -100}vw);
+  transform: translateX(${props => props.index * -100}vw);
 `
 
 const Slide = styled.div`
@@ -99,7 +101,7 @@ function Slider() {
             <Arrow direction="left" onClick={() => handleClick("left")}>
                 <ArrowLeftOutlined/>
             </Arrow>
-            <Wrapper slideIndex={slideIndex}>
+            <Wrapper index={slideIndex}>
                 {sliderItems.map((item) => (
                     <Slide bg={"#" + item.bg} key={item.id}>
                         <ImgContainer>
